@@ -96,11 +96,7 @@ export const ContactList = () => {
                   </div>
                   <div className="col">
                     <div className="mb-2">
-                      <input
-                        type="submit"
-                        value="Search"
-                        className="btn btn-outline-dark"
-                      />
+                      <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                   </div>
                 </form>
