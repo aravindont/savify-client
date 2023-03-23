@@ -37,18 +37,20 @@ export const ContactList = () => {
     try {
       const response = await ContactService.deleteContact(contactId);
       if (response) {
+        setState({ ...state, loading: true });
+        const [allContacts, deletedContact] = await Promise.all([
+          ContactService.getAllContacts(),
+          response.data,
+        ]);
         setState({
           ...state,
-          contacts: state.contacts.filter(
-            (contact) => contact.id !== contactId
-          ),
-          filteredContacts: state.filteredContacts.filter(
-            (contact) => contact.id !== contactId
-          ),
+          loading: false,
+          contacts: allContacts.data,
+          filteredContacts: allContacts.data,
         });
       }
     } catch (err) {
-      setState({ ...state, errorMessage: err.message });
+      setState({ ...state, loading: false, errorMessage: err.message });
     }
   };
 
