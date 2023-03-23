@@ -71,16 +71,11 @@ export const ContactList = () => {
             <div className="col">
               <div className="row">
                 <p className="h3">
-                  Contact List
                   <Link to={"/contacts/add"} className="btn btn-primary ms-2">
                     <i className="fa fa-plus-circle me-2" /> New
                   </Link>
                 </p>
-                <p className="fst-italic">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                  officia consectetur pariatur aut quae suscipit sunt similique
-                  autem doloremque repellat.
-                </p>
+                <p className="fst-italic">create and save your contacts</p>
               </div>
             </div>
             <div className="row">
@@ -118,44 +113,44 @@ export const ContactList = () => {
       ) : (
         <section className="contact-list">
           <div className="container">
+            <p className="h3">Contact List</p>
             <div className="row">
               {filteredContacts.length > 0 &&
                 filteredContacts.map((contact) => {
                   return (
-                    <div className="col-md-6 " key={contact.id}>
+                    <div
+                      className="col-lg-6 col-md-6 col-sm-12"
+                      key={contact.id}
+                    >
                       <div className="card my-2">
                         <div className="card-body">
-                          <div className="row d-flex align-items-center justify-content-around p-2">
-                            <div className="col-md-4 img-fluid">
-                              <img
-                                src={contact.photo}
-                                alt="avatar"
-                                className="contact-img"
-                              />
+                          <div className="row align-items-center justify-content-around p-2">
+                            <div className="col-lg-4 col-md-5 col-sm-5">
+                              <div className="contact-img-container">
+                                <img
+                                  src={contact.photo}
+                                  alt="avatar"
+                                  className="contact-img  mb-2"
+                                />
+                              </div>
                             </div>
-                            <div className="col-md-7">
+                            <div className="col-lg-7 col-md-6 col-sm-7">
                               <ul className="list-group">
                                 <li className="list-group-item list-group-item-action">
-                                  Name:
-                                  <span className="fw-bold">
-                                    {contact.name}
-                                  </span>
+                                  <span className="fw-bold">Name:</span>{" "}
+                                  {contact.name}
                                 </li>
                                 <li className="list-group-item list-group-item-action">
-                                  Phone:
-                                  <span className="fw-bold">
-                                    {contact.mobile}
-                                  </span>
+                                  <span className="fw-bold">Phone:</span>{" "}
+                                  {contact.mobile}
                                 </li>
                                 <li className="list-group-item list-group-item-action">
-                                  Email:
-                                  <span className="fw-bold">
-                                    {contact.email}
-                                  </span>
+                                  <span className="fw-bold">Email:</span>{" "}
+                                  {contact.email}
                                 </li>
                               </ul>
                             </div>
-                            <div className="col-md-1 d-flex flex-md-column align-items-center justify-content-center mt-md-0 mt-4">
+                            <div className="col-lg-1 col-md-1 col-sm-12 d-flex flex-md-column align-items-center justify-content-center mt-md-0 mt-4">
                               <Link
                                 to={`/contacts/view/${contact.id}`}
                                 className="btn btn-warning my-md-2 me-md-0 me-4"

@@ -1,8 +1,26 @@
 body {
   background-color: #f1d4c3;
 }
+.contact-img-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .contact-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  background-color: #f8f9fa;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
