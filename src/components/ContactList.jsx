@@ -37,7 +37,7 @@ export const ContactList = () => {
     try {
       const response = await ContactService.deleteContact(contactId);
       if (response) {
-        setState({ ...state, loading: true });
+        // setState({ ...state, loading: true });
         const response = await ContactService.getAllContacts();
         setState({
           ...state,

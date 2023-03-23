@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export class ContactService {
-  static serverURL = `https://savify-server.cyclic.app`;
+  static serverURL = `http://localhost:8000`;
 
   static getGroups() {
     let dataURL = `${this.serverURL}/groups`;
