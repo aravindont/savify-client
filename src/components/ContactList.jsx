@@ -37,19 +37,21 @@ export const ContactList = () => {
     try {
       const response = await ContactService.deleteContact(contactId);
       if (response) {
-        // setState({ ...state, loading: true });
-        const response = await ContactService.getAllContacts();
         setState({
           ...state,
-          loading: false,
-          contacts: response.data,
-          filteredContacts: response.data,
+          contacts: state.contacts.filter(
+            (contact) => contact.id !== contactId
+          ),
+          filteredContacts: state.filteredContacts.filter(
+            (contact) => contact.id !== contactId
+          ),
         });
       }
     } catch (err) {
-      setState({ ...state, loading: false, errorMessage: err.message });
+      setState({ ...state, errorMessage: err.message });
     }
   };
+
   const searchContacts = (event) => {
     setQuery({ ...query, text: event.target.value });
     let theContacts = state.contacts.filter((contact) => {
