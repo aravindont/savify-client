@@ -4,6 +4,10 @@
 
 - savify is the contacts saving app which helps users to manage there contacts
 
+## 🚀 deployed on [netlify](https://app.netlify.com/)
+
+- [https://contacts-savify.netlify.app/](https://contacts-savify.netlify.app/)
+
 ## 🛠 Installation and setup
 
 1. Clone the repo to your local machine.
