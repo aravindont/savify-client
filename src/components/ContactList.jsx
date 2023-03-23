@@ -38,15 +38,12 @@ export const ContactList = () => {
       const response = await ContactService.deleteContact(contactId);
       if (response) {
         setState({ ...state, loading: true });
-        const [allContacts, deletedContact] = await Promise.all([
-          ContactService.getAllContacts(),
-          response.data,
-        ]);
+        const response = await ContactService.getAllContacts();
         setState({
           ...state,
           loading: false,
-          contacts: allContacts.data,
-          filteredContacts: allContacts.data,
+          contacts: response.data,
+          filteredContacts: response.data,
         });
       }
     } catch (err) {
