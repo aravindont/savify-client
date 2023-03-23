@@ -134,7 +134,7 @@ export const ContactList = () => {
                                 <img
                                   src={contact.photo}
                                   alt="avatar"
-                                  className="contact-img  mb-2"
+                                  className="contact-img  mb-2 img-fluid"
                                 />
                               </div>
                             </div>

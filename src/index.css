@@ -11,7 +11,7 @@ body {
 .contact-img {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .card {
